@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct SoccerVideosApp: App {
+
+    @StateObject private var dataprovider = DataProvider()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(dataprovider: dataprovider)
+                .onAppear(perform: {
+                    dataprovider.loadCompetitions()
+                })
         }
     }
 }
