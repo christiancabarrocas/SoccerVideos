@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-enum SoccerError: Error {
+enum GeneralError: Error {
     case statusCodeError
     case decodeError
     case urlError
@@ -19,9 +19,10 @@ enum SoccerError: Error {
 final class NetworkingProvider {
     
     private var data: AnyCancellable?
-    
+
+    #warning("Use Future")
     #warning("Extract to SwiftPackage")
-    func load<T: Codable>(completion: @escaping (Result<T, SoccerError>) -> Void) {
+    func load<T: Codable>(completion: @escaping (Result<T, GeneralError>) -> Void) {
         
         let endpoint = Endpoint(path: "/video-api/v1", queryItems:nil)
         guard let url = endpoint.url  else { completion(.failure(.urlError)); return }
@@ -35,7 +36,7 @@ final class NetworkingProvider {
                     return element.data
                     }
             .decode(type: T.self, decoder: JSONDecoder())
-            .mapError({ (error) -> (SoccerError) in
+            .mapError({ (error) -> (GeneralError) in
                 switch error {
                 case is DecodingError:
                     completion(.failure(.decodeError))

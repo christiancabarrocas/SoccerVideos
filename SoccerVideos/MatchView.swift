@@ -45,6 +45,7 @@ struct MatchView: View {
         .frame(width: 120, height: 70, alignment: .leading)
         .background(gradient)
         .cornerRadius(8)
+        .shadow(color: .black, radius: 5, x: 1, y: 1)
     }
 }
 

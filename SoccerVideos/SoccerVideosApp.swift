@@ -14,10 +14,15 @@ struct SoccerVideosApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(dataprovider: dataprovider)
+            LandingView(dataprovider: dataprovider)
                 .onAppear(perform: {
                     dataprovider.loadCompetitions()
                 })
         }
     }
 }
+
+
+// Detail View
+// Property Wrappers
+// Localization

@@ -13,7 +13,7 @@ final class DataProvider: ObservableObject {
     @Published var competitions: [CompetitionViewModel] = []
     
     func loadCompetitions() {
-        networker.load { (result: Result<[Match], SoccerError>) in
+        networker.load { (result: Result<[Match], GeneralError>) in
             switch result {
             case .failure(let error): print("\(error)")
             case .success(let matches): self.competitions = matches.groupByTournament()

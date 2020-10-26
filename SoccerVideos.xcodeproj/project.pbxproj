@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		364F188E253A21B70013D9C4 /* SoccerVideosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364F188D253A21B70013D9C4 /* SoccerVideosApp.swift */; };
-		364F1890253A21B70013D9C4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364F188F253A21B70013D9C4 /* ContentView.swift */; };
+		364F1890253A21B70013D9C4 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364F188F253A21B70013D9C4 /* LandingView.swift */; };
 		364F1892253A21B90013D9C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 364F1891253A21B90013D9C4 /* Assets.xcassets */; };
 		364F1895253A21B90013D9C4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 364F1894253A21B90013D9C4 /* Preview Assets.xcassets */; };
 		364F18A0253A21B90013D9C4 /* SoccerVideosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364F189F253A21B90013D9C4 /* SoccerVideosTests.swift */; };
@@ -18,6 +18,7 @@
 		364F18CB253A255D0013D9C4 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364F18CA253A255D0013D9C4 /* Endpoint.swift */; };
 		364F18D3254085570013D9C4 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364F18D2254085570013D9C4 /* DataProvider.swift */; };
 		DE723BAA25416FFC00495BFE /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE723BA925416FFC00495BFE /* MatchView.swift */; };
+		DE723BB22541D12900495BFE /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE723BB12541D12900495BFE /* VideoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +41,7 @@
 /* Begin PBXFileReference section */
 		364F188A253A21B70013D9C4 /* SoccerVideos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoccerVideos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		364F188D253A21B70013D9C4 /* SoccerVideosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoccerVideosApp.swift; sourceTree = "<group>"; };
-		364F188F253A21B70013D9C4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		364F188F253A21B70013D9C4 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		364F1891253A21B90013D9C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		364F1894253A21B90013D9C4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		364F1896253A21B90013D9C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,6 +56,7 @@
 		364F18CA253A255D0013D9C4 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		364F18D2254085570013D9C4 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		DE723BA925416FFC00495BFE /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
+		DE723BB12541D12900495BFE /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,12 +108,13 @@
 			isa = PBXGroup;
 			children = (
 				364F188D253A21B70013D9C4 /* SoccerVideosApp.swift */,
-				364F188F253A21B70013D9C4 /* ContentView.swift */,
+				364F188F253A21B70013D9C4 /* LandingView.swift */,
+				DE723BB12541D12900495BFE /* VideoView.swift */,
+				DE723BA925416FFC00495BFE /* MatchView.swift */,
 				364F18CA253A255D0013D9C4 /* Endpoint.swift */,
 				364F18BB253A21E10013D9C4 /* NetworkingProvider.swift */,
-				364F18C0253A22460013D9C4 /* Model.swift */,
 				364F18D2254085570013D9C4 /* DataProvider.swift */,
-				DE723BA925416FFC00495BFE /* MatchView.swift */,
+				364F18C0253A22460013D9C4 /* Model.swift */,
 				364F1891253A21B90013D9C4 /* Assets.xcassets */,
 				364F1896253A21B90013D9C4 /* Info.plist */,
 				364F1893253A21B90013D9C4 /* Preview Content */,
@@ -275,9 +278,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				364F18D3254085570013D9C4 /* DataProvider.swift in Sources */,
-				364F1890253A21B70013D9C4 /* ContentView.swift in Sources */,
+				364F1890253A21B70013D9C4 /* LandingView.swift in Sources */,
 				364F188E253A21B70013D9C4 /* SoccerVideosApp.swift in Sources */,
 				364F18BC253A21E10013D9C4 /* NetworkingProvider.swift in Sources */,
+				DE723BB22541D12900495BFE /* VideoView.swift in Sources */,
 				DE723BAA25416FFC00495BFE /* MatchView.swift in Sources */,
 				364F18CB253A255D0013D9C4 /* Endpoint.swift in Sources */,
 				364F18C1253A22460013D9C4 /* Model.swift in Sources */,

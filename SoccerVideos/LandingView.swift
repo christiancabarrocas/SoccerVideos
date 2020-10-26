@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  LandingView.swift
 //  SoccerVideos
 //
 //  Created by Christian Cabarrocas on 16/10/2020.
@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-struct ContentView: View {
+struct LandingView: View {
     
     @ObservedObject var dataprovider: DataProvider
 
@@ -20,28 +20,30 @@ struct ContentView: View {
                         Spacer()
                         Text(competition.name)
                             .font(.system(size: 17, weight: .semibold, design: .default))
+
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack() {
                                 ForEach(competition.matches) { match in
                                     let mvm = MatchViewModel(match: match)
                                     MatchView(match: mvm)
                                 }
-                            }
+                            }.frame(height: 100)
                         }
                     }
                     .padding(.leading)
                 }
             }
             .navigationBarTitle(Text("Competitions"))
+            
         }
     }
     
 }
 
-//struct ContentView_Previews: PreviewProvider {
+//struct LandingView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        var dataprovider = DataProvider()
 //        dataprovider.loadCompetitions()
-//        ContentView(dataprovider: dataprovider)
+//        LandingView(dataprovider: dataprovider)
 //    }
 //}
