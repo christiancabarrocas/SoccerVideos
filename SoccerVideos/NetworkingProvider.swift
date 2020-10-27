@@ -22,11 +22,8 @@ final class NetworkingProvider {
 
     #warning("Use Future")
     #warning("Extract to SwiftPackage")
-    func load<T: Codable>(completion: @escaping (Result<T, GeneralError>) -> Void) {
-        
-        let endpoint = Endpoint(path: "/video-api/v1", queryItems:nil)
-        guard let url = endpoint.url  else { completion(.failure(.urlError)); return }
-                
+    func load<T: Codable>(url: URL, completion: @escaping (Result<T, GeneralError>) -> Void) {
+
         data = URLSession.shared.dataTaskPublisher(for: url)
             .tryMap() { element -> Data in
                     guard let httpResponse = element.response as? HTTPURLResponse,
