@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 final class DataProvider: ObservableObject {
     
@@ -22,6 +23,23 @@ final class DataProvider: ObservableObject {
             case .success(let matches): self.competitions = matches.groupByTournament()
             }
         }
+
+//        var cancellable: AnyCancellable?
+//
+//        cancellable = networker.load(url: url)
+//            .decode(type: [Match].self, decoder: JSONDecoder())
+//            .receive(on: RunLoop.main)
+//            .sink(receiveCompletion: { completion in
+//                switch completion {
+//                case .finished:
+//                    break
+//                case .failure(let error):
+//                    fatalError(error.localizedDescription)
+//                }
+//            }, receiveValue: { data in
+//                print("\(data.groupByTournament())")
+//                self.competitions = data.groupByTournament()
+//            })
     }
 }
 

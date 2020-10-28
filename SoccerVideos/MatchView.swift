@@ -32,28 +32,37 @@ struct MatchView: View {
                 Text(match.team1)
                     .foregroundColor(.primary)
                     .font(.callout)
-                    .shadow(color: .white, radius: 5, x: 3, y: 3)
+//                    .shadow(color: .white, radius: 5, x: 3, y: 3)
                 Text(match.team2)
                     .foregroundColor(.primary)
                     .font(.callout)
-                    .shadow(color: .white, radius: 5, x: 3, y: 3)
+//                    .shadow(color: .white, radius: 5, x: 3, y: 3)
                 Text(match.formattedDate)
                     .foregroundColor(.white)
                     .font(.footnote)
             }.padding(.leading)
         }
-        .frame(width: 120, height: 70, alignment: .leading)
+        .frame(width: 180, height: 80, alignment: .leading)
         .background(gradient)
         .cornerRadius(8)
-        .shadow(color: .black, radius: 5, x: 1, y: 1)
+        .shadow(color: Color.init(
+                    .secondaryLabel)
+                    .opacity(0.5), radius: 5, x: 1, y: 1)
+        .padding(.all, 10)
     }
 }
 
+#if DEBUG
 struct MatchView_Previews: PreviewProvider {
 
     static let matchData = Match(title: "Barcelona - Mallorca", url: "url", date: "2020-10-22T00:30:00+0000", videos: [], competition: Competition(name: "Spain LaLiga", url: "ulrC"))
     
     static var previews: some View {
-        MatchView(match: MatchViewModel(match: matchData))
+        Group {
+            MatchView(match: MatchViewModel(match: matchData))
+                .colorScheme(.dark)
+            MatchView(match: MatchViewModel(match: matchData))
+        }
     }
 }
+#endif

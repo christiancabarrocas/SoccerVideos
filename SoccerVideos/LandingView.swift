@@ -40,10 +40,14 @@ struct LandingView: View {
     
 }
 
-//struct LandingView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        var dataprovider = DataProvider()
-//        dataprovider.loadCompetitions()
-//        LandingView(dataprovider: dataprovider)
-//    }
-//}
+#if DEBUG
+struct LandingView_Previews: PreviewProvider {
+    static var previews: some View {
+        let dataProvider = DataProvider()
+        LandingView(dataprovider: dataProvider)
+            .onAppear(perform: {
+                dataProvider.loadCompetitions()
+            })
+    }
+}
+#endif

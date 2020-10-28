@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import os.log
 
 enum GeneralError: Error {
     case statusCodeError
@@ -17,14 +18,37 @@ enum GeneralError: Error {
 }
 
 final class NetworkingProvider {
-    
-    private var data: AnyCancellable?
+
+    private var cancellable: AnyCancellable?
 
     #warning("Use Future")
     #warning("Extract to SwiftPackage")
+
+    func load(url: URL) -> AnyPublisher<Data, GeneralError> {
+
+        return URLSession.shared.dataTaskPublisher(for: url)
+            .tryMap { data, response in
+                guard let httpResponse = response as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
+                    Console.log(type: .error, subtype: .networking)
+                    throw GeneralError.unknown
+                }
+                return data
+            }
+            .mapError { error in
+                Console.log(type: .error, subtype: .decoding)
+                if let error = error as? GeneralError {
+                    return error
+                } else {
+                    return GeneralError.unknown
+                }
+            }
+            .receive(on: RunLoop.main)
+            .eraseToAnyPublisher()
+    }
+
     func load<T: Codable>(url: URL, completion: @escaping (Result<T, GeneralError>) -> Void) {
 
-        data = URLSession.shared.dataTaskPublisher(for: url)
+        cancellable = URLSession.shared.dataTaskPublisher(for: url)
             .tryMap() { element -> Data in
                     guard let httpResponse = element.response as? HTTPURLResponse,
                         httpResponse.statusCode == 200 else {
@@ -48,7 +72,13 @@ final class NetworkingProvider {
             })
             .receive(on: RunLoop.main)
             .sink(receiveCompletion: { completion in
-                print("Finished")
+                switch completion {
+                    case .finished:
+                        print("Finished")
+                        break
+                    case .failure(let error):
+                        fatalError(error.localizedDescription)
+                    }
             }, receiveValue: { data in
                 completion(.success(data))
             })

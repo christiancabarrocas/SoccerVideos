@@ -17,6 +17,7 @@
 		364F18C1253A22460013D9C4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364F18C0253A22460013D9C4 /* Model.swift */; };
 		364F18CB253A255D0013D9C4 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364F18CA253A255D0013D9C4 /* Endpoint.swift */; };
 		364F18D3254085570013D9C4 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364F18D2254085570013D9C4 /* DataProvider.swift */; };
+		DE19565A254869350013998A /* Console.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE195659254869340013998A /* Console.swift */; };
 		DE723BAA25416FFC00495BFE /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE723BA925416FFC00495BFE /* MatchView.swift */; };
 		DE723BB22541D12900495BFE /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE723BB12541D12900495BFE /* VideoView.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		364F18C0253A22460013D9C4 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		364F18CA253A255D0013D9C4 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		364F18D2254085570013D9C4 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		DE195659254869340013998A /* Console.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Console.swift; sourceTree = "<group>"; };
 		DE723BA925416FFC00495BFE /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
 		DE723BB12541D12900495BFE /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -115,6 +117,7 @@
 				364F18BB253A21E10013D9C4 /* NetworkingProvider.swift */,
 				364F18D2254085570013D9C4 /* DataProvider.swift */,
 				364F18C0253A22460013D9C4 /* Model.swift */,
+				DE195659254869340013998A /* Console.swift */,
 				364F1891253A21B90013D9C4 /* Assets.xcassets */,
 				364F1896253A21B90013D9C4 /* Info.plist */,
 				364F1893253A21B90013D9C4 /* Preview Content */,
@@ -281,6 +284,7 @@
 				364F1890253A21B70013D9C4 /* LandingView.swift in Sources */,
 				364F188E253A21B70013D9C4 /* SoccerVideosApp.swift in Sources */,
 				364F18BC253A21E10013D9C4 /* NetworkingProvider.swift in Sources */,
+				DE19565A254869350013998A /* Console.swift in Sources */,
 				DE723BB22541D12900495BFE /* VideoView.swift in Sources */,
 				DE723BAA25416FFC00495BFE /* MatchView.swift in Sources */,
 				364F18CB253A255D0013D9C4 /* Endpoint.swift in Sources */,
