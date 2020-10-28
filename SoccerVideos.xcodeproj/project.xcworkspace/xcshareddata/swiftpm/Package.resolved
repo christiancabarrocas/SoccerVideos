@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Console",
+        "repositoryURL": "https://github.com/christiancabarrocas/Console.git",
+        "state": {
+          "branch": null,
+          "revision": "189194ad243fd4f86a78f782ab049b28c30f830c",
+          "version": "0.2.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -7,7 +7,7 @@
 
 import Foundation
 import Combine
-import os.log
+import Console
 
 enum GeneralError: Error {
     case statusCodeError
